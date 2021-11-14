@@ -17,6 +17,7 @@ main.container {
 .col#col_2 {
   flex-grow: 1;
   min-width: 100px;
+  overflow: auto;
 }
 
 .col#col_3 {
@@ -29,7 +30,15 @@ mat-form-field.mat-form-field {
 }
 
 @media only screen and (max-width: 600px) {
-  #col_2 {
-    overflow-x: scroll;
+  /* custom scrollbar for visible on mac*/
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: .25em;
+    height: .5em;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: .15em;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
   }
 }
